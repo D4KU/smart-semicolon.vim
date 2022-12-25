@@ -1,0 +1,5 @@
+g:smart_semicolon_filetypes	smart-semicolon.txt	/*g:smart_semicolon_filetypes*
+semicolon	smart-semicolon.txt	/*semicolon*
+smart-semicolon	smart-semicolon.txt	/*smart-semicolon*
+smart-semicolon-variables	smart-semicolon.txt	/*smart-semicolon-variables*
+smart-semicolon.vim	smart-semicolon.txt	/*smart-semicolon.vim*

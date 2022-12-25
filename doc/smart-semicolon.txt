@@ -1,0 +1,34 @@
+*smart-semicolon.vim* Smartly place semicolons at the end of lines.
+
+Author: D4KU
+License: Same terms as Vim itself (see |license|)
+
+DESCRIPTION                          *semicolon* *smart-semicolon*
+
+This |plugin| provides an |insert-mode| |mapping| to intelligently place
+semicolons within the current line. This is useful for C-like languages where
+a semicolon marks the end of a line and is seldomly found somewhere else.
+
+Upon pressing `;` in insert-mode, if every one of the following conditions is
+met, the semicolon is placed at the end of the current line. Otherwise, it is
+placed under the cursor as usual:
+
+* The current line ends with an alpha-numerical ASCII character, one of the
+  following characters: `_)]'"`, `--`, or `++`
+* The current line does not start with `for (`, ignoring |whitespace|
+* The next line is not further indented as the current one or is empty
+* The next line does not end with `{`, ignoring whitespace
+* The cursor is not positioned past the end of the current line
+* The cursor is outside a |highlight-group| whose name contains the string
+  `comment`
+
+If the semicolon is placed at the end of the line, trailing |whitespace| is
+removed.
+
+
+VARIABLES                          *smart-semicolon-variables*
+
+*g:smart_semicolon_filetypes* (default `['c', 'cs', 'cuda', 'hlsl', 'glsl', 'css']`)
+
+A |list| containing every |filetype| for which to create a mapping. Assign
+`['*']` to create one for every filetype.
