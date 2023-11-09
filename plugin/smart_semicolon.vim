@@ -9,6 +9,7 @@ endfunction
 
 call s:InitVariable('smart_semicolon_filetypes', [
     \ 'c',
+    \ 'cpp',
     \ 'cs',
     \ 'cuda',
     \ 'hlsl',

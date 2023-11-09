@@ -32,5 +32,5 @@ This plugin is only enabled for specific file-types. Change them by assigning
 a list to the following variable:
 
 ```
-    let g:smart_semicolon_filetypes = `['c', 'cs', 'cuda', 'hlsl', 'glsl', 'css']`
+    let g:smart_semicolon_filetypes = `['c', 'cpp', 'cs', 'cuda', 'hlsl', 'glsl', 'css']`
 ```

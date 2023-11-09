@@ -28,7 +28,7 @@ removed.
 
 VARIABLES                          *smart-semicolon-variables*
 
-*g:smart_semicolon_filetypes* (default `['c', 'cs', 'cuda', 'hlsl', 'glsl', 'css']`)
+*g:smart_semicolon_filetypes* (default `['c', 'cpp', 'cs', 'cuda', 'hlsl', 'glsl', 'css']`)
 
 A |list| containing every |filetype| for which to create a mapping. Assign
 `['*']` to create one for every filetype.
