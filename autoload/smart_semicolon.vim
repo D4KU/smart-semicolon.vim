@@ -10,7 +10,8 @@ function! smart_semicolon#insert()
     let nextLineInd = indent(nextLineNum)
     let nextLineEmpty = nextLine =~ '^\s*$'
 
-    if !s:CursorInComment()
+    if !s:InComment(col('.'))
+                \ && !s:InComment(col('$') - 1)
                 \ && pos[2] < col('$')
                 \ && curLine =~ '[[:alnum:]_)\]''"]\%[\(++\)]\%[\(--\)]\s*$'
                 \ && nextLine !~ '{\s*$'
@@ -38,9 +39,9 @@ function! smart_semicolon#insert()
     return ";"
 endfunction
 
-" Returns if cursor is in a commented section
-function! s:CursorInComment()
-    let hg = join(map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")'))
+" Returns if given column of current line is in a commented section
+function! s:InComment(col)
+    let hg = join(map(synstack(line('.'), a:col), 'synIDattr(v:val, "name")'))
     return hg =~? 'comment' ? 1 : 0
 endfunction
 

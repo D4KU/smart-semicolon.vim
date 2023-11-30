@@ -19,8 +19,8 @@ placed under the cursor as usual:
 * The next line is not further indented as the current one or is empty
 * The next line does not end with `{`, ignoring whitespace
 * The cursor is not positioned past the end of the current line
-* The cursor is outside a |highlight-group| whose name contains the string
-  `comment`
+* The cursor and the end of the current line are outside a |highlight-group|
+  whose name contains the string `comment`
 
 If the semicolon is placed at the end of the line, trailing |whitespace| is
 removed.
